@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "wwcapsuletabbarcontroller",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/William-Weng/WWCapsuleTabBarController",
+      "state" : {
+        "branch" : "main",
+        "revision" : "d185a3af7f2fc25b0a2d15c2f56582c88a6dd655"
+      }
+    },
+    {
+      "identity" : "wwprint",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/William-Weng/WWPrint.git",
+      "state" : {
+        "revision" : "0acf1057863faea81c3ded2057c21b09c3435435",
+        "version" : "1.3.0"
+      }
+    }
+  ],
+  "version" : 2
+}
