@@ -21,11 +21,11 @@ dependencies: [
 |didSelectedTab(_:index:)|選到的分頁Tab的index|
 |backgroundImages(_:)|選到的分頁Tab的整體背景圖片|
 |backgroundColors(_:)|選到的分頁Tab的整體背景色|
-|itemIcons(_:)|選到的分頁Item的圖示|
-|itemBackgroundColors(_:)|選到的分頁Item的背景色|
-|itemTitles(_:)|選到的分頁Item的文字|
-|itemTitleColors(_:)|選到的分頁Item的文字顏色|
-|itemTitleFonts(_:)|選到的分頁Item的文字字型|
+|itemIcons(_:)|分頁Item的圖示|
+|itemBackgroundColors(_:)|分頁Item的背景色|
+|itemTitles(_:)|分頁Item的文字|
+|itemTitleColors(_:)|分頁Item的文字顏色|
+|itemTitleFonts(_:)|分頁Item的文字字型|
 
 ### Function - 可用函式
 |函式|功能|
