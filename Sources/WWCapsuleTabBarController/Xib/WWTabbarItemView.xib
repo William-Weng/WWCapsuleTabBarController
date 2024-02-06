@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="iconImageView" destination="IO4-hh-d8c" id="V4t-J8-I3z"/>
                 <outlet property="imageCenterYConstraint" destination="cbA-cX-BXm" id="tOD-f3-7lZ"/>
+                <outlet property="labelCenterYConstraint" destination="O4p-sV-MkJ" id="wVe-lu-STm"/>
                 <outlet property="titleLabel" destination="Js2-yh-m7Z" id="34L-qN-Lnl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="DpM-AE-uoO"/>
             </connections>
@@ -31,7 +32,7 @@
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Js2-yh-m7Z">
-                            <rect key="frame" x="218" y="287" width="24" height="14"/>
+                            <rect key="frame" x="218" y="290.66666666666669" width="24" height="14"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -39,8 +40,8 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="Js2-yh-m7Z" firstAttribute="centerX" secondItem="dXT-Ce-Fy2" secondAttribute="centerX" id="4Pn-nz-sMs"/>
-                        <constraint firstItem="Js2-yh-m7Z" firstAttribute="top" secondItem="IO4-hh-d8c" secondAttribute="bottom" constant="4" id="GMI-iT-u0d"/>
+                        <constraint firstItem="Js2-yh-m7Z" firstAttribute="centerY" secondItem="dXT-Ce-Fy2" secondAttribute="centerY" constant="16" id="O4p-sV-MkJ"/>
+                        <constraint firstItem="Js2-yh-m7Z" firstAttribute="centerX" secondItem="dXT-Ce-Fy2" secondAttribute="centerX" id="aSG-MP-K2t"/>
                         <constraint firstItem="IO4-hh-d8c" firstAttribute="centerY" secondItem="dXT-Ce-Fy2" secondAttribute="centerY" constant="-10" id="cbA-cX-BXm"/>
                         <constraint firstItem="IO4-hh-d8c" firstAttribute="centerX" secondItem="dXT-Ce-Fy2" secondAttribute="centerX" id="qkb-0H-97f"/>
                     </constraints>

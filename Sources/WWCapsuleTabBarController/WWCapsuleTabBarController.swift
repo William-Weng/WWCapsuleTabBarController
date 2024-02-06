@@ -169,6 +169,7 @@ private extension WWCapsuleTabBarController {
             
             if let icon = myDelegate?.itemIcons(self)[safe: index] {
                 itemView.iconImageView.image = (selectedIndex != index) ? icon.normal : icon.selected
+                itemView.labelCenterYConstraint.constant = (itemView.iconImageView.image != nil) ? 16 : 0
             }
             
             if let backgroundColor = myDelegate?.itemBackgroundColors(self)[safe: index] {
@@ -185,7 +186,7 @@ private extension WWCapsuleTabBarController {
             
             if let title = myDelegate?.itemTitles(self)[safe: index] {
                 itemView.titleLabel.text = (selectedIndex != index) ? title.normal : title.selected
-                itemView.imageCenterYConstraint.constant = (itemView.titleLabel.text != nil) ? -10 : 4
+                itemView.imageCenterYConstraint.constant = (itemView.titleLabel.text != nil) ? -10 : 0
             }
         }
     }
