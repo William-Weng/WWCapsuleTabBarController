@@ -48,7 +48,7 @@ public extension WWCapsuleTabBarController {
     func configure(withIndex selectedIndex: Int) {
         self.selectedIndex = selectedIndex
         configure(for: selectedIndex)
-        myDelegate?.didSelectedTab(self, index: selectedIndex)
+        myDelegate?.didSelectedTab(self, withIndex: selectedIndex)
     }
     
     /// 隱藏 / 顯示自訂TabBar
@@ -155,8 +155,8 @@ private extension WWCapsuleTabBarController {
     /// - Parameter selectedIndex: Int
     func configureView(for selectedIndex: Int) {
         
-        if let backgroundColor = myDelegate?.backgroundColors(self)?[safe: selectedIndex] { tabBarView?.backgroundColor = backgroundColor }
-        if let backgroundImage = myDelegate?.backgroundImages(self)?[safe: selectedIndex] { tabBarView?.imageView.image = backgroundImage }
+        if let backgroundColor = myDelegate?.backgroundColors(self, withIndex: selectedIndex) { tabBarView?.backgroundColor = backgroundColor }
+        if let backgroundImage = myDelegate?.backgroundImages(self, withIndex: selectedIndex) { tabBarView?.imageView.image = backgroundImage }
     }
     
     /// 設定TabItem的長相
@@ -167,24 +167,24 @@ private extension WWCapsuleTabBarController {
         
         for (index, itemView) in itemViewArray.enumerated() {
             
-            if let icon = myDelegate?.itemIcons(self)[safe: index] {
+            if let icon = myDelegate?.itemIcons(self, withIndex: index) {
                 itemView.iconImageView.image = (selectedIndex != index) ? icon.normal : icon.selected
                 itemView.labelCenterYConstraint.constant = (itemView.iconImageView.image != nil) ? 16 : 0
             }
             
-            if let backgroundColor = myDelegate?.itemBackgroundColors(self)[safe: index] {
+            if let backgroundColor = myDelegate?.itemBackgroundColors(self, withIndex: index) {
                 itemView.backgroundColor = (selectedIndex != index) ? backgroundColor.normal : backgroundColor.selected
             }
             
-            if let titleColor = myDelegate?.itemTitleColors(self)[safe: index] {
+            if let titleColor = myDelegate?.itemTitleColors(self, withIndex: index) {
                 itemView.titleLabel.textColor = (selectedIndex != index) ? titleColor.normal : titleColor.selected
             }
             
-            if let font = myDelegate?.itemTitleFonts(self)[safe: index] {
+            if let font = myDelegate?.itemTitleFonts(self, withIndex: index) {
                 itemView.titleLabel.font = (selectedIndex != index) ? font.normal : font.selected
             }
             
-            if let title = myDelegate?.itemTitles(self)[safe: index] {
+            if let title = myDelegate?.itemTitles(self, withIndex: index) {
                 itemView.titleLabel.text = (selectedIndex != index) ? title.normal : title.selected
                 itemView.imageCenterYConstraint.constant = (itemView.titleLabel.text != nil) ? -10 : 0
             }

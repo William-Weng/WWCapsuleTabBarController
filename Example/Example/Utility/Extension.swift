@@ -7,22 +7,9 @@
 
 import UIKit
 
-// MARK: - UITableViewCell (function)
-extension UITableViewCell {
+// MARK: - Collection (override function)
+extension Collection {
     
-    /// [設定內建樣式 - iOS 14](https://apppeterpan.medium.com/從-ios-15-開始-使用內建-cell-樣式建議搭配-uilistcontentconfiguration-13d64eb317be)
-    /// - Parameters:
-    ///   - text: 主要文字
-    ///   - secondaryText: 次要文字
-    ///   - image: 圖示
-    func _contentConfiguration(text: String?, secondaryText: String?, image: UIImage?) {
-        
-        var config = defaultContentConfiguration()
-        
-        config.text = text
-        config.secondaryText = secondaryText
-        config.image = image
-        
-        contentConfiguration = config
-    }
+    /// [為Array加上安全取值特性 => nil](https://stackoverflow.com/questions/25329186/safe-bounds-checked-array-lookup-in-swift-through-optional-bindings)
+    subscript(safe index: Index) -> Element? { return indices.contains(index) ? self[index] : nil }
 }

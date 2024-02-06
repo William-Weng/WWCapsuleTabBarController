@@ -10,7 +10,7 @@
 ### [Installation with Swift Package Manager](https://medium.com/彼得潘的-swift-ios-app-開發問題解答集/使用-spm-安裝第三方套件-xcode-11-新功能-2c4ffcf85b4b)
 ```js
 dependencies: [
-    .package(url: "https://github.com/William-Weng/WWCapsuleTabBarController.git", .upToNextMajor(from: "1.0.0"))
+    .package(url: "https://github.com/William-Weng/WWCapsuleTabBarController.git", .upToNextMajor(from: "1.1.0"))
 ]
 ```
 
@@ -18,14 +18,14 @@ dependencies: [
 
 |函式|功能|
 |-|-|
-|didSelectedTab(_:index:)|選到的分頁Tab的index|
-|backgroundImages(_:)|選到的分頁Tab的整體背景圖片|
-|backgroundColors(_:)|選到的分頁Tab的整體背景色|
-|itemIcons(_:)|分頁Item的圖示|
-|itemBackgroundColors(_:)|分頁Item的背景色|
-|itemTitles(_:)|分頁Item的文字|
-|itemTitleColors(_:)|分頁Item的文字顏色|
-|itemTitleFonts(_:)|分頁Item的文字字型|
+|didSelectedTab(_:withIndex:)|選到的分頁Tab的index|
+|backgroundImages(_:withIndex:)|選到的分頁Tab的整體背景圖片|
+|backgroundColors(_:withIndex:)|選到的分頁Tab的整體背景色|
+|itemIcons(_:withIndex:)|分頁Item的圖示|
+|itemBackgroundColors(_:withIndex:)|分頁Item的背景色|
+|itemTitles(_:withIndex:)|分頁Item的文字|
+|itemTitleColors(_:withIndex:)|分頁Item的文字顏色|
+|itemTitleFonts(_:withIndex:)|分頁Item的文字字型|
 
 ### Function - 可用函式
 |函式|功能|
@@ -39,13 +39,6 @@ dependencies: [
 
 ### Example - 範例
 ```swift
-//
-//  MyTabBarController.swift
-//  Example
-//
-//  Created by iOS on 2024/2/6.
-//
-
 import UIKit
 import WWCapsuleTabBarController
 import WWPrint
@@ -58,14 +51,14 @@ final class MyTabBarController: WWCapsuleTabBarController {
     }
 }
 
-// MARK: - WWTabBarControllerDelegate
-extension MyTabBarController: WWTabBarControllerDelegate {
+// MARK: - WWCapsuleTabBarControllerDelegate
+extension MyTabBarController: WWCapsuleTabBarControllerDelegate {
     
-    func didSelectedTab(_ tabBarController: WWCapsuleTabBarController, index: Int) {
+    func didSelectedTab(_ tabBarController: WWCapsuleTabBarController, withIndex: Int) {
         wwPrint(index)
     }
     
-    func backgroundImages(_ tabBarController: WWCapsuleTabBarController) -> [UIImage?]? {
+    func backgroundImages(_ tabBarController: WWCapsuleTabBarController, withIndex index: Int) -> UIImage? {
         
         let images = [
             UIImage(named: "Green"),
@@ -76,10 +69,10 @@ extension MyTabBarController: WWTabBarControllerDelegate {
             UIImage(named: "Blue"),
         ]
         
-        return images
+        return images[safe: index] ?? nil
     }
     
-    func backgroundColors(_ tabBarController: WWCapsuleTabBarController) -> [UIColor?]? {
+    func backgroundColors(_ tabBarController: WWCapsuleTabBarController, withIndex index: Int) -> UIColor? {
         
         let colors: [UIColor?] = [
             .black.withAlphaComponent(0.3),
@@ -90,10 +83,10 @@ extension MyTabBarController: WWTabBarControllerDelegate {
             .black.withAlphaComponent(0.8),
         ]
         
-        return colors
+        return colors[safe: index] ?? nil
     }
     
-    func itemIcons(_ tabBarController: WWCapsuleTabBarController) -> [WWCapsuleTabBarController.TabBarIcon] {
+    func itemIcons(_ tabBarController: WWCapsuleTabBarController, withIndex index: Int) -> WWCapsuleTabBarController.TabBarIcon? {
         
         let icons: [WWCapsuleTabBarController.TabBarIcon] = [
             (normal: UIImage(systemName: "square.and.arrow.up"), selected: nil),
@@ -104,10 +97,10 @@ extension MyTabBarController: WWTabBarControllerDelegate {
             (normal: UIImage(systemName: "trash"), selected: UIImage(systemName: "trash.fill")),
         ]
         
-        return icons
+        return icons[safe: index]
     }
     
-    func itemBackgroundColors(_ tabBarController: WWCapsuleTabBarController) -> [WWCapsuleTabBarController.TabBarColor] {
+    func itemBackgroundColors(_ tabBarController: WWCapsuleTabBarController, withIndex index: Int) -> WWCapsuleTabBarController.TabBarColor? {
         
         let colors: [WWCapsuleTabBarController.TabBarColor] = [
             (normal: .clear, selected: .red),
@@ -118,10 +111,10 @@ extension MyTabBarController: WWTabBarControllerDelegate {
             (normal: .clear, selected: .magenta),
         ]
         
-        return colors
+        return colors[safe: index]
     }
     
-    func itemTitles(_ tabBarController: WWCapsuleTabBarController) -> [WWCapsuleTabBarController.TabBarTitle] {
+    func itemTitles(_ tabBarController: WWCapsuleTabBarController, withIndex index: Int) -> WWCapsuleTabBarController.TabBarTitle? {
         
         let titles: [WWCapsuleTabBarController.TabBarTitle] = [
             (normal: nil, selected: "主頁"),
@@ -132,10 +125,10 @@ extension MyTabBarController: WWTabBarControllerDelegate {
             (normal: "My", selected: "我的"),
         ]
         
-        return titles
+        return titles[safe: index]
     }
     
-    func itemTitleColors(_ tabBarController: WWCapsuleTabBarController) -> [WWCapsuleTabBarController.TabBarColor] {
+    func itemTitleColors(_ tabBarController: WWCapsuleTabBarController, withIndex index: Int) -> WWCapsuleTabBarController.TabBarColor? {
         
         let colors: [TabBarColor] = [
             (normal: .clear, selected: .white),
@@ -146,10 +139,10 @@ extension MyTabBarController: WWTabBarControllerDelegate {
             (normal: .white, selected: .yellow),
         ]
         
-        return colors
+        return colors[safe: index]
     }
     
-    func itemTitleFonts(_ tabBarController: WWCapsuleTabBarController) -> [WWCapsuleTabBarController.TabBarFont] {
+    func itemTitleFonts(_ tabBarController: WWCapsuleTabBarController, withIndex index: Int) -> WWCapsuleTabBarController.TabBarFont? {
         
         let fonts: [WWCapsuleTabBarController.TabBarFont] = [
             (normal: .systemFont(ofSize: 16, weight: .black), selected: nil),
@@ -160,7 +153,7 @@ extension MyTabBarController: WWTabBarControllerDelegate {
             (normal: .italicSystemFont(ofSize: 12), selected: .boldSystemFont(ofSize: 16)),
         ]
         
-        return fonts
+        return fonts[safe: index]
     }
 }
 
