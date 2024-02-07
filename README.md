@@ -26,7 +26,7 @@ dependencies: [
 ### Function - 可用函式
 |函式|功能|
 |-|-|
-|myDelegateSetting(_:)|設定WWCapsuleTabBarControllerDelegate|
+|myDelegateSetting(_:useAnimation:)|設定WWCapsuleTabBarControllerDelegate|
 |configure(withIndex:)|顏色 / 文字設定 for selectedIndex|
 |hidden(_:duration:)|隱藏 / 顯示自訂TabBar|
 

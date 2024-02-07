@@ -13,6 +13,8 @@ open class WWCapsuleTabBarController: UITabBarController {
     
     private var tabBarView: WWTabBarView?
     private var isHidden = false
+    private var useAnimation = false
+    
     private weak var myDelegate: WWCapsuleTabBarControllerDelegate?
     
     open override func viewDidLoad() {
@@ -46,9 +48,12 @@ public extension WWCapsuleTabBarController {
 public extension WWCapsuleTabBarController {
     
     /// 設定WWCapsuleTabBarControllerDelegate
-    /// - Parameter myDelegate: WWCapsuleTabBarControllerDelegate?
-    func myDelegateSetting(_ myDelegate: WWCapsuleTabBarControllerDelegate?) {
+    /// - Parameters:
+    ///   - myDelegate: WWCapsuleTabBarControllerDelegate?
+    ///   - useAnimation: Bool
+    func myDelegateSetting(_ myDelegate: WWCapsuleTabBarControllerDelegate?, useAnimation: Bool = true) {
         self.myDelegate = myDelegate
+        self.useAnimation = useAnimation
         configure(for: 0)
     }
     
@@ -119,8 +124,18 @@ private extension WWCapsuleTabBarController {
         
         guard let itemViewArray = tabBarView?.stackView.subviews as? [WWTabbarItemView] else { return }
         
-        configureView(for: selectedIndex)
-        configureItems(itemViewArray: itemViewArray, for: selectedIndex)
+        if (!useAnimation) {
+            configureView(for: selectedIndex)
+            configureItems(itemViewArray: itemViewArray, for: selectedIndex)
+            return
+        }
+        
+        let animator = UIViewPropertyAnimator(duration: 0.5, curve: .easeInOut) { [unowned self] in
+            configureView(for: selectedIndex)
+            configureItems(itemViewArray: itemViewArray, for: selectedIndex)
+        }
+        
+        animator.startAnimation()
     }
     
     /// 設定主畫面長相
