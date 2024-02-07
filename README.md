@@ -60,12 +60,12 @@ extension MyTabBarController: WWCapsuleTabBarControllerDelegate {
     func backgroundSetting(_ tabBarController: WWCapsuleTabBarController, withIndex index: Int) -> WWCapsuleTabBarController.TabBarBackground? {
         
         let settings: [WWCapsuleTabBarController.TabBarBackground] = [
-            (image: UIImage(named: "Green"), color: .black.withAlphaComponent(0.3)),
-            (image: UIImage(named: "Yellow"), color: .systemPink),
-            (image: UIImage(named: "Blue"), color: .gray.withAlphaComponent(0.7)),
-            (image: UIImage(named: "Green"), color: .blue.withAlphaComponent(0.1)),
-            (image: UIImage(named: "Yellow"), color: .magenta.withAlphaComponent(0.5)),
-            (image: UIImage(named: "Blue"), color: .black.withAlphaComponent(0.8)),
+            (image: UIImage(named: "Green"), color: .black.withAlphaComponent(0.3), alpha: 1.0),
+            (image: UIImage(named: "Yellow"), color: .systemPink, alpha: 0.8),
+            (image: UIImage(named: "Blue"), color: .gray.withAlphaComponent(0.7), alpha: 0.6),
+            (image: UIImage(named: "Green"), color: .blue.withAlphaComponent(0.1), alpha: 0.4),
+            (image: UIImage(named: "Yellow"), color: .magenta.withAlphaComponent(0.5), alpha: 0.2),
+            (image: UIImage(named: "Blue"), color: .black.withAlphaComponent(0.8), alpha: 0.0),
         ]
         
         return settings[safe: index]
@@ -122,5 +122,4 @@ final class Tab6ViewController: WWTabBarRootViewController {
         super.viewDidAppear(animated)
     }
 }
-
 ```
