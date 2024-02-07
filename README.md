@@ -31,6 +31,9 @@ dependencies: [
 |hidden(_:duration:)|隱藏 / 顯示自訂TabBar|
 
 ### Setting - 相關設定
+- The homepage should inherit WWCapsuleTabBarController.
+- 首頁要繼承WWCapsuleTabBarController。
+
 ![](./Example.png)
 
 ### Example - 範例
@@ -103,4 +106,21 @@ private extension MyTabBarController {
     /// 初始化
     func initSetting() { self.myDelegateSetting(self) }
 }
+```
+```swift
+import UIKit
+import WWPrint
+import WWCapsuleTabBarController
+
+final class Tab6ViewController: WWTabBarRootViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+}
+
 ```
