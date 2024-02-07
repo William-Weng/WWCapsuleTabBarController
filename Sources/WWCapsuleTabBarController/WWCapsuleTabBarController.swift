@@ -19,6 +19,11 @@ open class WWCapsuleTabBarController: UITabBarController {
         initTabBarItemSetting()
     }
     
+    open override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        viewWillTransitionAction(to: size, with: coordinator)
+    }
+    
     @objc func didSelectedTab(_ tapGesture: UITapGestureRecognizer) {
         didSelectedTabAction(with: tapGesture)
     }
@@ -131,6 +136,18 @@ private extension WWCapsuleTabBarController {
             configureItemTitle(itemView: itemView, selectedIndex: selectedIndex, withIndex: index)
         }
     }
+    
+    /// 畫面旋轉後，要修正的事情 => 修正大小 / 位置
+    /// - Parameters:
+    ///   - size: CGSize
+    ///   - coordinator: UIViewControllerTransitionCoordinator
+    func viewWillTransitionAction(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        
+        coordinator.animate { [unowned self] _ in
+            tabBarView?.frame = tabBar.frame
+            if let maskLayer = tabBarViewMaskLayerMaker(tabBarView) { tabBarView?.layer.mask = maskLayer }
+        }
+    }
 }
 
 // MARK: 小工具
@@ -146,7 +163,7 @@ private extension WWCapsuleTabBarController {
         else {
             return nil
         }
-        
+                
         for index in 0..<tabBarItems.count {
             
             let itemView = WWTabbarItemView()

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="landscape" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
@@ -21,25 +21,25 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MMr-Ed-2rD">
-                    <rect key="frame" x="8" y="56" width="438" height="268"/>
+                    <rect key="frame" x="4" y="4" width="446" height="372"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="IQp-EL-GNz">
-                    <rect key="frame" x="8" y="56" width="438" height="268"/>
+                    <rect key="frame" x="4" y="4" width="446" height="372"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="IQp-EL-GNz" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0YA-AX-3pg"/>
-                <constraint firstItem="MMr-Ed-2rD" firstAttribute="bottom" secondItem="IQp-EL-GNz" secondAttribute="bottom" id="8d0-UR-oIp"/>
-                <constraint firstItem="MMr-Ed-2rD" firstAttribute="top" secondItem="IQp-EL-GNz" secondAttribute="top" id="H30-iH-TU4"/>
-                <constraint firstItem="MMr-Ed-2rD" firstAttribute="leading" secondItem="IQp-EL-GNz" secondAttribute="leading" id="Idh-aF-sVR"/>
-                <constraint firstItem="MMr-Ed-2rD" firstAttribute="trailing" secondItem="IQp-EL-GNz" secondAttribute="trailing" id="Iga-4h-lUd"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="IQp-EL-GNz" secondAttribute="trailing" constant="8" id="Oc7-Ya-Ydx"/>
-                <constraint firstItem="IQp-EL-GNz" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="kwh-j4-9Lp"/>
-                <constraint firstItem="IQp-EL-GNz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="pL4-7F-J2Y"/>
+                <constraint firstItem="IQp-EL-GNz" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" constant="-8" id="6gJ-OV-6nS"/>
+                <constraint firstItem="MMr-Ed-2rD" firstAttribute="width" secondItem="IQp-EL-GNz" secondAttribute="width" id="9ac-o5-bdA"/>
+                <constraint firstItem="IQp-EL-GNz" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" constant="-8" id="I0E-ps-cvC"/>
+                <constraint firstItem="IQp-EL-GNz" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="R8o-nc-9CF"/>
+                <constraint firstItem="MMr-Ed-2rD" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="TGf-9Q-Klj"/>
+                <constraint firstItem="MMr-Ed-2rD" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bMS-E7-K1N"/>
+                <constraint firstItem="IQp-EL-GNz" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="iq9-Uf-9Et"/>
+                <constraint firstItem="MMr-Ed-2rD" firstAttribute="height" secondItem="IQp-EL-GNz" secondAttribute="height" id="o8g-E4-Gsq"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="73.282442748091597" y="-55.633802816901408"/>
