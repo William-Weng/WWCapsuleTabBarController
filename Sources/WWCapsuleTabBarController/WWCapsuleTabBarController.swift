@@ -35,7 +35,7 @@ open class WWCapsuleTabBarController: UITabBarController {
 // MARK: - typealias
 public extension WWCapsuleTabBarController {
     
-    typealias TabBarBackground = (image: UIImage?, color: UIColor?)                     // 背景設定: 圖片 / 背景色
+    typealias TabBarBackground = (image: UIImage?, color: UIColor?, alpha: CGFloat?)    // 背景設定: 圖片 / 背景色 / 逶明度
     typealias TabBarItem = (icon: TabBarIcon?, color: TabBarColor?)                     // Item設定: 圖片 / 背景色
     typealias TabBarTitle = (text: TabBarText?, font: TabBarFont?, color: TabBarColor?) // Item設定: 圖片 / 背景色
     typealias TabBarIcon = (normal: UIImage?, selected: UIImage?)                       // 圖示 - (沒選到/ 有選到)
@@ -78,7 +78,7 @@ public extension WWCapsuleTabBarController {
         
         self.isHidden = isHidden
         tabBarView?.isHidden = false
-
+        
         let animator = UIViewPropertyAnimator(duration: duration, curve: .easeInOut) { [unowned self] in
             tabBarView?.frame = CGRect(origin: point, size: size)
         }
@@ -145,6 +145,7 @@ private extension WWCapsuleTabBarController {
         if let backgroundSetting = myDelegate?.backgroundSetting(self, withIndex: selectedIndex) {
             tabBarView?.backgroundColor = backgroundSetting.color
             tabBarView?.imageView.image = backgroundSetting.image
+            tabBarView?.imageView.alpha = backgroundSetting.alpha ?? 1.0
         }
     }
     

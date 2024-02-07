@@ -14,8 +14,4 @@ public protocol WWCapsuleTabBarControllerDelegate: AnyObject {
     func backgroundSetting(_ tabBarController: WWCapsuleTabBarController, withIndex index: Int) -> WWCapsuleTabBarController.TabBarBackground?
     func itemSetting(_ tabBarController: WWCapsuleTabBarController, withIndex index: Int) -> WWCapsuleTabBarController.TabBarItem?
     func itemTitleSetting(_ tabBarController: WWCapsuleTabBarController, withIndex index: Int) -> WWCapsuleTabBarController.TabBarTitle?
-//    func itemTitles(_ tabBarController: WWCapsuleTabBarController, withIndex index: Int) -> WWCapsuleTabBarController.TabBarText?
-//    func itemTitleColors(_ tabBarController: WWCapsuleTabBarController, withIndex index: Int) -> WWCapsuleTabBarController.TabBarColor?
-//    func itemTitleFonts(_ tabBarController: WWCapsuleTabBarController, withIndex index: Int) -> WWCapsuleTabBarController.TabBarFont?
-    
 }

@@ -15,7 +15,7 @@
 		812BCD102B722DD9004EC3CA /* WWCapsuleTabBarController in Frameworks */ = {isa = PBXBuildFile; productRef = 812BCD0F2B722DD9004EC3CA /* WWCapsuleTabBarController */; };
 		8130039027D5D18100436128 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8130038F27D5D18100436128 /* Constant.swift */; };
 		8130039227D5D19000436128 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8130039127D5D19000436128 /* Extension.swift */; };
-		8191D5AA2B73273D0048134B /* WWCapsuleTabBarController in Frameworks */ = {isa = PBXBuildFile; productRef = 8191D5A92B73273D0048134B /* WWCapsuleTabBarController */; };
+		8191D5AD2B73694B0048134B /* WWCapsuleTabBarController in Frameworks */ = {isa = PBXBuildFile; productRef = 8191D5AC2B73694B0048134B /* WWCapsuleTabBarController */; };
 		81AFC2A62B720EE100DD2747 /* Tab2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AFC2A52B720EE100DD2747 /* Tab2ViewController.swift */; };
 		81AFC2A82B7210FB00DD2747 /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AFC2A72B7210FB00DD2747 /* MyTabBarController.swift */; };
 		81AFC2AA2B72149F00DD2747 /* Tab6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AFC2A92B72149F00DD2747 /* Tab6ViewController.swift */; };
@@ -43,7 +43,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				812BCD102B722DD9004EC3CA /* WWCapsuleTabBarController in Frameworks */,
-				8191D5AA2B73273D0048134B /* WWCapsuleTabBarController in Frameworks */,
+				8191D5AD2B73694B0048134B /* WWCapsuleTabBarController in Frameworks */,
 				3DAC9C1927016E78006663C2 /* WWPrint in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -152,7 +152,7 @@
 			packageProductDependencies = (
 				3DAC9C1827016E78006663C2 /* WWPrint */,
 				812BCD0F2B722DD9004EC3CA /* WWCapsuleTabBarController */,
-				8191D5A92B73273D0048134B /* WWCapsuleTabBarController */,
+				8191D5AC2B73694B0048134B /* WWCapsuleTabBarController */,
 			);
 			productName = Example;
 			productReference = 3DBCD87026F198EF00522E3B /* Example.app */;
@@ -184,7 +184,7 @@
 			mainGroup = 3DBCD86726F198EF00522E3B;
 			packageReferences = (
 				3DAC9C1727016E78006663C2 /* XCRemoteSwiftPackageReference "WWPrint" */,
-				8191D5A82B73273D0048134B /* XCRemoteSwiftPackageReference "WWCapsuleTabBarController" */,
+				8191D5AB2B73694B0048134B /* XCRemoteSwiftPackageReference "WWCapsuleTabBarController" */,
 			);
 			productRefGroup = 3DBCD87126F198EF00522E3B /* Products */;
 			projectDirPath = "";
@@ -439,12 +439,12 @@
 				minimumVersion = 1.0.0;
 			};
 		};
-		8191D5A82B73273D0048134B /* XCRemoteSwiftPackageReference "WWCapsuleTabBarController" */ = {
+		8191D5AB2B73694B0048134B /* XCRemoteSwiftPackageReference "WWCapsuleTabBarController" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/William-Weng/WWCapsuleTabBarController";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.1.0;
+				minimumVersion = 1.1.5;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -459,9 +459,9 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = WWCapsuleTabBarController;
 		};
-		8191D5A92B73273D0048134B /* WWCapsuleTabBarController */ = {
+		8191D5AC2B73694B0048134B /* WWCapsuleTabBarController */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8191D5A82B73273D0048134B /* XCRemoteSwiftPackageReference "WWCapsuleTabBarController" */;
+			package = 8191D5AB2B73694B0048134B /* XCRemoteSwiftPackageReference "WWCapsuleTabBarController" */;
 			productName = WWCapsuleTabBarController;
 		};
 /* End XCSwiftPackageProductDependency section */
