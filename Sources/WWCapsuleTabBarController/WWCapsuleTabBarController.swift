@@ -12,6 +12,7 @@ import WWPrint
 open class WWCapsuleTabBarController: UITabBarController {
     
     private var tabBarView: WWTabBarView?
+    private var isHidden = false
     private weak var myDelegate: WWCapsuleTabBarControllerDelegate?
     
     open override func viewDidLoad() {
@@ -63,14 +64,21 @@ public extension WWCapsuleTabBarController {
     /// - Parameters:
     ///   - isHidden: Bool
     ///   - duration: TimeInterval
-    func hidden(_ isHidden: Bool = true, duration: TimeInterval = 0.25) {
+    func hidden(_ isHidden: Bool = true, duration: TimeInterval = 0.2) {
         
         let size = tabBar.frame.size
         var point = tabBar.frame.origin
         
         if (isHidden) { point = CGPoint(x: point.x, y: point.y + size.height) }
         
-        UIView.animate(withDuration: duration) { self.tabBarView?.frame = CGRect(origin: point, size: size) }
+        self.isHidden = isHidden
+        tabBarView?.isHidden = false
+
+        let animator = UIViewPropertyAnimator(duration: duration, curve: .easeInOut) { [unowned self] in
+            tabBarView?.frame = CGRect(origin: point, size: size)
+        }
+        
+        animator.startAnimation()
     }
 }
 
@@ -144,7 +152,11 @@ private extension WWCapsuleTabBarController {
     func viewWillTransitionAction(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         
         coordinator.animate { [unowned self] _ in
+            
             tabBarView?.frame = tabBar.frame
+            hidden(isHidden, duration: 0)
+            tabBarView?.isHidden = isHidden
+            
             if let maskLayer = tabBarViewMaskLayerMaker(tabBarView) { tabBarView?.layer.mask = maskLayer }
         }
     }
