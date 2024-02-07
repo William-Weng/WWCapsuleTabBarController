@@ -14,16 +14,12 @@ extension Collection {
     subscript(safe index: Index) -> Element? { return indices.contains(index) ? self[index] : nil }
 }
 
-// MARK: - UIColr (static function)
-extension UIColor {
-    
-    /// 隨機顏色
-    /// - Returns: UIColor
-    static func _random() -> UIColor { return UIColor(red: CGFloat.random(in: 0...1), green: CGFloat.random(in: 0...1), blue: CGFloat.random(in: 0...1), alpha: 1.0)}
-}
-
+// MARK: - UIBezierPath (static function)
 extension UIBezierPath {
     
+    /// 繪出膠囊的外形曲線 (感謝ChatGPT)
+    /// - Parameter rect: CGRect
+    /// - Returns: UIBezierPath
     static func _capsule(_ rect: CGRect) -> UIBezierPath {
         
         let path = UIBezierPath()
