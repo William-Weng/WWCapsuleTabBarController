@@ -118,7 +118,7 @@ private extension WWCapsuleTabBarController {
     /// - Parameter selectedIndex: Int
     func configure(for selectedIndex: Int) {
         
-        guard let itemViewArray = tabBarView?.stackView.subviews as? [WWTabbarItemView] else { return }
+        guard let itemViewArray = tabBarView?.stackView.subviews as? [WWTabBarItemView] else { return }
         
         if (!useAnimation) {
             configureView(for: selectedIndex)
@@ -147,9 +147,9 @@ private extension WWCapsuleTabBarController {
     
     /// 設定TabItem的長相
     /// - Parameters:
-    ///   - itemViewArray: [WWTabbarItemView]
+    ///   - itemViewArray: [WWTabBarItemView]
     ///   - selectedIndex: Int
-    func configureItems(itemViewArray: [WWTabbarItemView], for selectedIndex: Int) {
+    func configureItems(itemViewArray: [WWTabBarItemView], for selectedIndex: Int) {
         
         for (index, itemView) in itemViewArray.enumerated() {
             configureItemIcon(itemView: itemView, selectedIndex: selectedIndex, withIndex: index)
@@ -190,7 +190,7 @@ private extension WWCapsuleTabBarController {
                 
         for index in 0..<tabBarItems.count {
             
-            let itemView = WWTabbarItemView()
+            let itemView = WWTabBarItemView()
             let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(Self.didSelectedTab(_:)))
             
             itemView.tag = index
@@ -223,10 +223,10 @@ private extension WWCapsuleTabBarController {
     
     /// 設定Item圖示
     /// - Parameters:
-    ///   - itemView: WWTabbarItemView
+    ///   - itemView: WWTabBarItemView
     ///   - selectedIndex: Int
     ///   - index: Int
-    func configureItemIcon(itemView: WWTabbarItemView, selectedIndex: Int, withIndex index: Int) {
+    func configureItemIcon(itemView: WWTabBarItemView, selectedIndex: Int, withIndex index: Int) {
 
         if let iconSetting = myDelegate?.itemSetting(self, withIndex: index) {
 
@@ -243,10 +243,10 @@ private extension WWCapsuleTabBarController {
     
     /// 設定Item標題
     /// - Parameters:
-    ///   - itemView: WWTabbarItemView
+    ///   - itemView: WWTabBarItemView
     ///   - selectedIndex: Int
     ///   - index: Int
-    func configureItemTitle(itemView: WWTabbarItemView, selectedIndex: Int, withIndex index: Int) {
+    func configureItemTitle(itemView: WWTabBarItemView, selectedIndex: Int, withIndex index: Int) {
         
         if let titleSetting = myDelegate?.itemTitleSetting(self, withIndex: index) {
             
