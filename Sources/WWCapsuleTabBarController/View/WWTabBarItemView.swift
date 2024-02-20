@@ -1,6 +1,6 @@
 //
-//  WWTabBarItemView.swift
-//  WWCapsuleTabBarController
+//  WWTabbarItemView.swift
+//  Example
 //
 //  Created by William.Weng on 2024/2/5.
 //
@@ -8,8 +8,8 @@
 import UIKit
 import WWPrint
 
-/// 自定義WWTabBarItemView
-final class WWTabBarItemView: UIView {
+/// 自定義WWTabbarItemView
+final class WWTabbarItemView: UIView {
     
     @IBOutlet var view: UIView!
     @IBOutlet weak var iconImageView: UIImageView!
@@ -31,7 +31,7 @@ final class WWTabBarItemView: UIView {
 }
 
 // MARK: - 小工具
-private extension WWTabBarItemView {
+private extension WWTabbarItemView {
     
     /// 載入XIB的一些基本設定
     func initViewFromXib() {

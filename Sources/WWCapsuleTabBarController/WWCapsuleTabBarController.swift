@@ -1,6 +1,6 @@
 //
 //  WWCapsuleTabBarController.swift
-//  WWCapsuleTabBarController
+//  Example
 //
 //  Created by William.Weng on 2024/2/5.
 //
@@ -62,7 +62,6 @@ public extension WWCapsuleTabBarController {
     func configure(withIndex selectedIndex: Int) {
         self.selectedIndex = selectedIndex
         configure(for: selectedIndex)
-        myDelegate?.didSelectedTab(self, withIndex: selectedIndex)
     }
     
     /// 隱藏 / 顯示自訂TabBar
@@ -109,20 +108,17 @@ private extension WWCapsuleTabBarController {
     /// - Parameter tapGesture: UITapGestureRecognizer
     func didSelectedTabAction(with tapGesture: UITapGestureRecognizer) {
         
-        guard let selectedIndex = tapGesture.view?.tag,
-              self.selectedIndex != selectedIndex
-        else {
-            return
-        }
+        guard let selectedIndex = tapGesture.view?.tag else { return }
         
-        configure(withIndex: selectedIndex)
+        defer { myDelegate?.didSelectedTab(self, withIndex: selectedIndex) }
+        if (self.selectedIndex != selectedIndex) { configure(withIndex: selectedIndex) }
     }
     
     /// 顏色 / 文字設定
     /// - Parameter selectedIndex: Int
     func configure(for selectedIndex: Int) {
         
-        guard let itemViewArray = tabBarView?.stackView.subviews as? [WWTabBarItemView] else { return }
+        guard let itemViewArray = tabBarView?.stackView.subviews as? [WWTabbarItemView] else { return }
         
         if (!useAnimation) {
             configureView(for: selectedIndex)
@@ -153,7 +149,7 @@ private extension WWCapsuleTabBarController {
     /// - Parameters:
     ///   - itemViewArray: [WWTabbarItemView]
     ///   - selectedIndex: Int
-    func configureItems(itemViewArray: [WWTabBarItemView], for selectedIndex: Int) {
+    func configureItems(itemViewArray: [WWTabbarItemView], for selectedIndex: Int) {
         
         for (index, itemView) in itemViewArray.enumerated() {
             configureItemIcon(itemView: itemView, selectedIndex: selectedIndex, withIndex: index)
@@ -194,7 +190,7 @@ private extension WWCapsuleTabBarController {
                 
         for index in 0..<tabBarItems.count {
             
-            let itemView = WWTabBarItemView()
+            let itemView = WWTabbarItemView()
             let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(Self.didSelectedTab(_:)))
             
             itemView.tag = index
@@ -230,7 +226,7 @@ private extension WWCapsuleTabBarController {
     ///   - itemView: WWTabbarItemView
     ///   - selectedIndex: Int
     ///   - index: Int
-    func configureItemIcon(itemView: WWTabBarItemView, selectedIndex: Int, withIndex index: Int) {
+    func configureItemIcon(itemView: WWTabbarItemView, selectedIndex: Int, withIndex index: Int) {
 
         if let iconSetting = myDelegate?.itemSetting(self, withIndex: index) {
 
@@ -250,7 +246,7 @@ private extension WWCapsuleTabBarController {
     ///   - itemView: WWTabbarItemView
     ///   - selectedIndex: Int
     ///   - index: Int
-    func configureItemTitle(itemView: WWTabBarItemView, selectedIndex: Int, withIndex index: Int) {
+    func configureItemTitle(itemView: WWTabbarItemView, selectedIndex: Int, withIndex index: Int) {
         
         if let titleSetting = myDelegate?.itemTitleSetting(self, withIndex: index) {
             

@@ -1,8 +1,8 @@
 //
 //  Extension.swift
-//  WWCapsuleTabBarController
+//  Example
 //
-//  Created by William.Weng on 2024/2/5.
+//  Created by William.Weng on 2024/1/1.
 //
 
 import UIKit

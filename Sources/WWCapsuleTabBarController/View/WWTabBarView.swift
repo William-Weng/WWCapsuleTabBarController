@@ -1,8 +1,8 @@
 //
 //  WWTabbar.swift
-//  WWCapsuleTabBarController
+//  Example
 //
-//  Created by William.Weng on 2024/2/5.
+//  Created by iOS on 2024/2/5.
 //
 
 import UIKit
