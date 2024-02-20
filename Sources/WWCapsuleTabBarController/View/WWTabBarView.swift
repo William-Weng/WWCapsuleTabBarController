@@ -1,6 +1,6 @@
 //
 //  WWTabbar.swift
-//  Example
+//  WWCapsuleTabBarController
 //
 //  Created by iOS on 2024/2/5.
 //

@@ -1,6 +1,6 @@
 //
 //  WWCapsuleTabBarController.swift
-//  Example
+//  WWCapsuleTabBarController
 //
 //  Created by William.Weng on 2024/2/5.
 //
