@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/William-Weng/WWCapsuleTabBarController",
       "state" : {
-        "revision" : "578d5ccd1c628963fa661986876a950c8be8d764",
-        "version" : "1.2.2"
+        "revision" : "9f778c2f66019e9d6918a9199614c6e76cabf404",
+        "version" : "1.2.3"
       }
     },
     {

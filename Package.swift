@@ -15,7 +15,7 @@ let package = Package(
         .package(url: "https://github.com/William-Weng/WWPrint", from: "1.3.0"),
     ],
     targets: [
-        .target(name: "WWCapsuleTabBarController", dependencies: ["WWPrint"], resources: [.process("Xib")]),
+        .target(name: "WWCapsuleTabBarController", dependencies: ["WWPrint"], resources: [.process("Xib"), .copy("Privacy")]),
     ],
     swiftLanguageVersions: [
         .v5
